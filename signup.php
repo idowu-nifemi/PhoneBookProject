@@ -48,34 +48,35 @@
     //fetch the resulting rows as an array.
     $row_account = $checkAccount->fetch_assoc();
 
-     //checking if the email has been used before   
-    if ($row_account['email'] == $email) {
-      $errors['message'] = "Email exist, try using another Email <br/>";
-    }
+    
 
     if(array_filter($errors)) {
       $errors['status'] =  "ERROR 505!! <br/>";
-      
     }else {
+        //checking if the email has been used before   
+        if ($row_account['email'] == $email) {
+          $errors['message'] = "Email exist, try using another Email <br/>";
 
-      $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
-      $email =  mysqli_real_escape_string($conn, $_POST['email']);
-      $telephone = mysqli_real_escape_string($conn, $_POST['telephone']);
-      $password = mysqli_real_escape_string($conn, $_POST['password']);
-      $encPassword = md5($password); //encrypted the password
+        }else {
 
-      // create sql:              
-      $sql = "INSERT INTO tb_accounts (fullname,email,telephone,password)VALUES('$fullname','$email','$telephone','$encPassword')";
+          $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
+          $email =  mysqli_real_escape_string($conn, $_POST['email']);
+          $telephone = mysqli_real_escape_string($conn, $_POST['telephone']);
+          $password = mysqli_real_escape_string($conn, $_POST['password']);
+          $encPassword = md5($password); //encrypted the password
 
-      if($conn->query($sql) === TRUE) { 
-        //  sucess
-        header('location:index.php');  
-      }else {
-         echo 'query error'.mysqli_error($conn);
-      } 
-    
-    }  
+          // create sql:              
+          $sql = "INSERT INTO tb_accounts (fullname,email,telephone,password)VALUES('$fullname','$email','$telephone','$encPassword')";
+
+          if($conn->query($sql) === TRUE) { 
+            //sucess
+            header('location:index.php');  
+          }else {
+             echo 'query error'.mysqli_error($conn);
+           } 
+        }  
         
+     }
   }
 ?>
 

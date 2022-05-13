@@ -113,7 +113,7 @@
 
                         <div class="col-md-6">
 
-                            <label class="">lastnames:</label>
+                            <label class="">lastname:</label>
                             <input type="text" class="form-control" id = "lastname" name = "lastname" placeholder ="Last name" value="<?php echo htmlspecialchars($_POST['lastname']); ?>">
                             <div class="text-danger"><small><?php echo $errors['lastname']; ?></small></div>
 

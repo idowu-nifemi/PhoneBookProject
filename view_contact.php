@@ -1,5 +1,5 @@
 <?php 
-
+   include 'config/db_connect.php';  
    //initialize the session
    if(session_status() != PHP_SESSION_ACTIVE);
    session_start();
@@ -12,8 +12,6 @@
       header('location:index.php');  
    }
 
-   include 'config/db_connect.php';  
-
    if($_REQUEST['del'] != ""){
 
       $id_to_delete = mysqli_real_escape_string($conn,$_REQUEST['del']);
@@ -23,27 +21,14 @@
      
         if($conn->query($deleteId) === TRUE) { 
 
-         header('location:view_contact.php?success=1');  
+          header('location:view_contact.php?success=1');  
        }else {
-         header('location:view_contact.php?success=0');  
+          header('location:view_contact.php?success=0');  
 
           echo 'query error'.mysqli_error($conn);
         } 
-      }
+   }
 
-      if($_POST['edit']){
-
-         $id_to_edit= mysqli_real_escape_string($conn,$_POST['edit']);
-        
-           if($conn->query($editId) === TRUE){
-            //  sucess
-            header('location:editContact.php?success=1');  
-          }else {
-            header('location:editContact.php?success=0');  
-   
-             echo 'query error'.mysqli_error($conn);
-           } 
-         }
 
 
    //write query for all tb_contacts..

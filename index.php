@@ -1,10 +1,9 @@
 <?php
+  include 'config/db_connect.php';  
   //initialize the session
   if(session_status() != PHP_SESSION_ACTIVE);
   session_start();
   
-  include 'config/db_connect.php';  
-
   $email = $password = '';
 
   $errors = array( 'email' => ''  ,'password' => '', 'message1' => '' , 'message2' => '' ,'status' => '' );

@@ -1,4 +1,5 @@
 <?php 
+  include 'config/db_connect.php';  
   //initialize the session
   if(session_status() != PHP_SESSION_ACTIVE);
   session_start();
@@ -10,8 +11,6 @@
     if ($userInSession == NULL) {
         header('location:index.php');
     }
-
-  include 'config/db_connect.php';  
 
   //write query for all tb_contacts
   $sql = $conn->query("SELECT * FROM tb_contacts WHERE account_id = $userInSession");
@@ -61,7 +60,7 @@
           $errors['email'] = "invalid email <br/>";
           }
       }
-    // // getting the email from the database
+    // // getting the telephone from the database
     // $checkAccount = $conn->query("SELECT * FROM tb_contacts WHERE telephone='$telephone' ");
       
     // //fetch the resulting rows as an array.

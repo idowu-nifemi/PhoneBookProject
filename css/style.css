@@ -1,0 +1,36 @@
+/* 
+ *{
+  margin: 0;
+  padding: 0;
+} */
+
+#sidebar {
+   position: absolute;
+   width: 14%;
+   height: 60%;
+   background:-moz-linear-gradient(top,#fafafa 0% ,rgba(152, 176, 194, 0.543) 100%); 
+   background:-webkit-linear-gradient(top ,#fafafa 0% ,rgba(152, 176, 194, 0.543) 100%); 
+   background: linear-gradient(top,#f5f8f9c2 0% ,rgba(152, 176, 194, 0.543) 100%); 
+   
+ }
+ 
+ #sidebar ul {
+   color: black;
+   font-size: 20px;
+   padding: 30px;
+   text-align: center;
+ }
+
+ .toggle-btn{
+   position: absolute;
+   left: 100px;
+   top: 15px;
+ }
+
+ .toggle-btn span {
+   display: block;
+   color: black;
+   width: 30px;
+   height: 5px;
+   margin: 3px;
+ }

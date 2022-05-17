@@ -1,5 +1,6 @@
 <?php 
-   include 'config/db_connect.php';  
+  require_once('config/db_connect.php');  
+
    //initialize the session
    if(session_status() != PHP_SESSION_ACTIVE);
    session_start();
@@ -28,22 +29,24 @@
           echo 'query error'.mysqli_error($conn);
         } 
    }
-
-
-
    //write query for all tb_contacts..
    $tb_contacts = $conn->query("SELECT * FROM tb_contacts WHERE account_id = $userInSession");
+
 ?>
+
+
 <!-- i will be adding the search form for the contacts -->
 <!DOCTYPE html>
    <html lang="en">
-      <?php include "header.php"; ?> 
+    <?php include('header.php');?>
+    <?php include('sidebar.php');?>
 
+   <div class="back-overlay">
     <div class="container">
-      <div class="text-center border square rounded w-75 p-5 m-5">
+      <div class="text-center border square rounded w-75 p-5">
       <div style="overflow-x:auto;">
-         <div class="table">
-            <table class ="table table-striped table-bordered table-hover  m-5 p-5" id="lol" >
+   
+            <table class ="table table-striped table-bordered table-hover border m-3 p-5" id="lol" >
                   <thead class="thead-dark">
                      <tr class ="text-muted font-weight-bold p-5 m-5">
                         <h3 class=" text-primary text-center text-capitalize">My contacts.</h3>
@@ -71,15 +74,10 @@
                   </tr>
                   <?php } ?>
                </table>
-         </div>
-            
-         <!-- <form class="form-inline justify-content-center" action="view_contact.php">
-               <input class="form-control mr-sm-2" type="text" placeholder="Search">
-               <button class="btn btn-success" type="submit">Search</button>
-         </form> -->
       </div>   
       </div>
-    </div>      
-      <?php include "footer.php"; ?> 
-     
+    </div> 
+   </div>
+
+    <?php include('footer.php'); ?>
    </html>  

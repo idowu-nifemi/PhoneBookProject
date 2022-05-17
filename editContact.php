@@ -1,5 +1,6 @@
 <?php 
-  include 'config/db_connect.php';  
+ require_once('config/db_connect.php');  
+
   //initialize the session
   if(session_status() != PHP_SESSION_ACTIVE);
   session_start();
@@ -93,38 +94,34 @@ if(isset($_POST['update'])){
 
 <!DOCTYPE html>
 <html lang="en">
-  <?php include "header.php"; ?> 
-    
-    <div class="bg-faded">
+ <?php include('header.php');?>
+ <?php include('sidebar.php');?>
+ 
+    <div class="back-overlay">
         <!-- sidebar whether fixed,auto or responsive buh i will prefer a toggleable one -->
         <div class="container">
             <div class="row">  
               <div class="col-md-3"></div>                        
                   
               <div class="col-md-6 ">
-                <form class = "small text-muted round m-5 p-3 font-weight-bold"  method="POST">
+                <form class = "small text-muted round m-5 p-3 font-weight-bold" method="POST">
                     
                     <img class=" img-fluid rounded d-block mx-auto mt-0" style="width: 55px;" src="img/phonebooklogo.png" alt="no thumbnails">
                     <h4 class = " display-5 text-center lead text-danger font-weight-bold text-capitalize">Edit contact..</h4>  
                     <small class ="text-danger font-weight-bold"><?php echo $errors['status']; ?></small>
+
                     <div class="form-row form-group form-text mt-5">
-
                         <div class="col-md-6">
-
                             <label class="">Firstname:</label>
                             <input type="text" class="form-control" id ="firstname" name ="firstname" placeholder="First name" value="<?php echo htmlspecialchars($tb_contacts['firstname']); ?>">
                             <div class="text-danger"><small><?php echo $errors['firstname']; ?></small></div>
-
                         </div>
 
                         <div class="col-md-6">
-
                             <label class="">lastname:</label>
                             <input type="text" class="form-control" id = "lastname" name = "lastname" placeholder ="Last name" value="<?php echo htmlspecialchars($tb_contacts['lastname']); ?>">
                             <div class="text-danger"><small><?php echo $errors['lastname']; ?></small></div>
-
                         </div>
-
                     </div>
                                                 
                     <div class="form-row form-group form-text">
@@ -154,5 +151,6 @@ if(isset($_POST['update'])){
             </div>
         </div>            
     </div>
-  <?php include "footer.php"; ?> 
+    
+    <?php include('footer.php'); ?>
 </html>

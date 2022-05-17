@@ -1,5 +1,6 @@
 <?php 
-  include 'config/db_connect.php';  
+  require_once('config/db_connect.php');  
+
   //initialize the session
   if(session_status() != PHP_SESSION_ACTIVE);
   session_start();
@@ -60,12 +61,7 @@
           $errors['email'] = "invalid email <br/>";
           }
       }
-    // // getting the telephone from the database
-    // $checkAccount = $conn->query("SELECT * FROM tb_contacts WHERE telephone='$telephone' ");
       
-    // //fetch the resulting rows as an array.
-    // $row_account = $checkAccount->fetch_assoc();
-    
     if(array_filter($errors)) {
       $errors['status'] =  "ERROR 505!! <br/>"; 
     } else {
@@ -88,39 +84,24 @@
       }
 
   }
-        
-             
-        
+              
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
-  <?php include "header.php"; ?> 
-    
-    <div class="bg-faded">
+
+    <?php include('header.php');?>
+    <?php include('sidebar.php');?>
+
+    <div class="back-overlay">
         <!-- sidebar whether fixed,auto or responsive buh i will prefer a toggleable one -->
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Dashboard</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">contacts</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">my profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">logout</a>
-          </li>
-        </ul>
         <div class="container">
             <div class="row">                          
               <div class="col-md-6 mt-5 ">
-                <div class="card  round m-5 w-50">
+                <div class="card round rounded round2 m-5 w-50">
                   <img class=" img-fluid rounded d-block mx-auto mt-0" style="width: 55px;" src="img/phonebooklogo.png" alt="no thumbnails">
                     <div class="card-body  ">
-                       <div class = "card-title  text-center text-primary font-weight-bold text-capitalize">no of contacts saved..</div>     
+                       <div class = "card-title text-center text-primary font-weight-bold text-capitalize">no of contacts saved..</div>     
                        <h3 class = " card-text text-center text-muted font-weight-bold"> <?php echo sizeof($tb_contacts);?></h3> 
                     </div>
                         
@@ -131,12 +112,12 @@
               </div>
     
               <div class="col-md-6 ">
-                <form class = "small text-muted round m-5 p-3 font-weight-bold" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+                <form class = "small text-muted round rounded m-5 p-3 font-weight-bold" method="POST">
                     
-                    <img class=" img-fluid rounded d-block mx-auto mt-0" style="width: 55px;" src="img/phonebooklogo.png" alt="no thumbnails">
-                    <h4 class = " display-5 text-center lead text-danger font-weight-bold text-capitalize">add new contact..</h4>  
-                    <small class ="text-danger font-weight-bold"><?php echo $errors['status']; ?></small>
-                    <div class="form-row form-group form-text mt-5">
+                    <img class= "img-fluid rounded d-block mx-auto mt-0" style="width: 55px;" src="img/phonebooklogo.png" alt="no thumbnails">
+                    <h4 class = "display-5 text-center lead text-danger font-weight-bold text-capitalize">add new contact..</h4>  
+                    <small class= "text-danger font-weight-bold"><?php echo $errors['status']; ?></small>
+                    <div class= "form-row form-group form-text mt-5">
 
                         <div class="col-md-6">
 
@@ -182,5 +163,5 @@
             </div>
         </div>            
     </div>
-  <?php include "footer.php"; ?> 
+    <?php include('footer.php'); ?>
 </html>

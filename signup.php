@@ -1,6 +1,6 @@
 <?php
   
-  include 'config/db_connect.php'; 
+  require_once('config/db_connect.php');
 
   $fullname = $email =$telephone=$password ='';
 
@@ -82,15 +82,15 @@
 
 <!DOCTYPE html>
   <html lang="en">
-    <?php include "header.php"; ?>
-     <div class="bg-faded">
+     <?php include('header.php');?>
+     <div class="back-overlay">
        <div class="container">
           <div class="row">
             <div class="col-md-4"></div>
 
             <div class="col-md-4 p-4 m-5 bg-danger rounded">
                 <img class="img-fluid rounded d-block mx-auto" style="width: 55px;" src="img/phonebooklogo.png" alt="no thumbnails">
-                <form class="small text-white" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+                <form class="small text-white" method="POST">
 
                       <small class ="font-weight-bold"><?php echo $errors['status']; ?></small>
                       <!-- for fullname -->
@@ -138,5 +138,5 @@
           </div>
        </div>
      </div>    
-  <?php include "footer.php"; ?>
+    <?php include('footer.php'); ?>
 </html>

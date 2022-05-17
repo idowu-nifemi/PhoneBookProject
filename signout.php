@@ -1,7 +1,7 @@
 <?php
   //initialize the session
 
-  if(session_status() != PHP_SESSION_ACTIVE)
+  if(session_status() != PHP_SESSION_ACTIVE);
     session_start();
  
     session_destroy();

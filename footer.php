@@ -8,11 +8,10 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <p class="text-warning small">This is my first project it was inspired by a friend and also a supervisor
-                    the basic aim is for the users to actually be able to login and see their contacts uniquely 
-                    do check it out and drop your reviews down below his is my first project it was inspired by a friend and also a supervisor
-                    the basic aim is for the users to actually be able to login and see their contacts uniquely 
-                    do check it out and drop your reviews down below </p>
+                <h4 id ="about" class ="text-warning font-weight-bold">About</h4>
+                <p class="text-warning small">This project is called Phonebook where users can sign up or create account and login to 
+                    create ,view , edit and delete contact and this is actually unique to each users ..do check it out and let me know what you think
+                 </p>
             </div>
                     
             <div class="col-md-3">
@@ -20,7 +19,7 @@
                     <h6><a class="text-white small" href="index.php">Home<i class="fas fa-home"></i></a></h6>
                     <h6><a class="text-white small" href="signup.php">Sign up<i class="fas fa-pen"></i></a></h6> 
                     <h6><a class="text-white small" href="#">Services<i class="fas fa-bars"></i></a></h6>
-                    <h6><a class="text-white small" href="#">About<i class="fas fa-question"></i></a></h6> 
+                    <h6><a class="text-white small" href="#about">About<i class="fas fa-question"></i></a></h6> 
                     <h6><a class="text-white small" href="#">Term<i class="fas fa-book"></i></a></h6>  
                     
             </div>
@@ -28,10 +27,10 @@
             
             <div class="col-md-3">
                     <h4 class="text-white font-weight-bold">follow us on</h4>
-                    <h6><a class="text-white small" href="#">facebook</a></h6>
-                    <h6><a class="text-white small" href="#">Whatsapp</a></h6>
-                    <h6><a class="text-white small" href="#">Twitter<i class="fas fa-twitter"></i></a></h6>
-                    <h6><a class="text-white small" href="#">Instagram</a></h6>
+                    <h6><a class="text-white small" href="#">facebook<i class="fa fa-fw fa-facebook"></i></a></h6>
+                    <h6><a class="text-white small" href="#">Whatsapp<i class="fa fa-fw fa-whatsapp"></i></a></h6>
+                    <h6><a class="text-white small" href="#">Twitter<i class="fa fa-fw fa-twitter"></i></a></h6>
+                    <h6><a class="text-white small" href="#">Instagram<i class="fa fa-fw fa-facebook"></i></a></h6>
             </div>
                 
         </div>
@@ -65,6 +64,11 @@
         $(document).ready(function() {
         $('#lol').DataTable();
      });
+    </script>
+    <script type="text/javascript">
+      function togglemenu(){
+        document.getElementById('sidebar').classList.toggle('active');
+      }
     </script>
 </body>
 

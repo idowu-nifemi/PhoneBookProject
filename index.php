@@ -1,5 +1,6 @@
 <?php
-  include 'config/db_connect.php';  
+  require_once('config/db_connect.php');  
+
   //initialize the session
   if(session_status() != PHP_SESSION_ACTIVE);
   session_start();
@@ -58,7 +59,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <?php include "header.php";?>
+<?php include('header.php');?>
             
     <div class="back-overlay">
       <section class="container ">
@@ -66,7 +67,7 @@
 
               <div class="col-md-4">
                 <h4 class=" display-3 text-center text-muted text-capitalize">WORK in progress...</h4>  
-                  <p class="text-white font-weight-bold text-truncate ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente asperiores debitis nobis 
+                  <p class="font-weight-bold text-truncate ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente asperiores debitis nobis 
                     voluptates exercitationem recusandae, doloribus quidem neque itaque explicabo, 
                     dignissimos officia? Eum, id porro quasi error fugit ad reprehenderit.</p>
               </div>
@@ -75,7 +76,7 @@
 
               <div class="col-md-4 p-4 bg-secondary my-3 rounded ">
                 <img class=" img-fluid rounded d-block mx-auto mt-0" style="width: 55px;" src="img/phonebooklogo.png" alt="no thumbnails">
-                <form class ="small text-white" action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
+                <form class ="small text-white" method="POST">
 
                   <small class ="text-danger font-weight-bold"><?php echo $errors['status']; ?></small>
                   <!-- for Email -->
@@ -122,9 +123,7 @@
           </div>  
       </section>
     </div>
-
-
-  <?php include "footer.php"; ?>
+  <?php include('footer.php'); ?>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

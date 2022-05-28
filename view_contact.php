@@ -12,7 +12,7 @@
    if ($userInSession == NULL) {
       header('location:index.php');  
    }
-
+  
    if($_REQUEST['del'] != ""){
 
       $id_to_delete = mysqli_real_escape_string($conn,$_REQUEST['del']);
@@ -23,7 +23,7 @@
         if($conn->query($deleteId) === TRUE) { 
 
           header('location:view_contact.php?success=1');  
-       }else {
+        }else {
           header('location:view_contact.php?success=0');  
 
           echo 'query error'.mysqli_error($conn);
@@ -38,19 +38,21 @@
 <!-- i will be adding the search form for the contacts -->
 <!DOCTYPE html>
    <html lang="en">
+
     <?php include('header.php');?>
     <?php include('sidebar.php');?>
 
    <div class="back-overlay">
     <div class="container">
       <div class="text-center border square rounded w-75 p-5">
-      <div style="overflow-x:auto;">
-   
-            <table class ="table table-striped table-bordered table-hover border m-3 p-5" id="lol" >
+       <div style="overflow-x:auto;">
+        
+            <table class ="table table-striped table-bordered table-hover border m-3 p-5" id="data_table" >
                   <thead class="thead-dark">
                      <tr class ="text-muted font-weight-bold p-5 m-5">
-                        <h3 class=" text-primary text-center text-capitalize">My contacts.</h3>
+                        <h3 class=" text-warning lead font-weight-bold text-capitalize text-center text-capitalize">My contacts.</h3>
                         <img class=" img-fluid rounded d-block mx-auto mt-0" style="width: 55px;" src="img/phonebooklogo.png" alt="no thumbnails">
+                       
                         <th>Firstname</th>
                         <th>lastname</th>
                         <th>Telephone</th>

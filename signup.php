@@ -51,12 +51,11 @@
     
 
     if(array_filter($errors)) {
-      $errors['status'] =  "ERROR 505!! <br/>";
+      $errors['status'] =  "ERROR 509!";
     }else {
         //checking if the email has been used before   
         if ($row_account['email'] == $email) {
           $errors['message'] = "Email exist, try using another Email <br/>";
-
         }else {
 
           $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
@@ -82,7 +81,9 @@
 
 <!DOCTYPE html>
   <html lang="en">
+
      <?php include('header.php');?>
+     
      <div class="back-overlay">
        <div class="container">
           <div class="row">
@@ -92,7 +93,6 @@
                 <img class="img-fluid rounded d-block mx-auto" style="width: 55px;" src="img/phonebooklogo.png" alt="no thumbnails">
                 <form class="small text-white" method="POST">
 
-                      <small class ="font-weight-bold"><?php echo $errors['status']; ?></small>
                       <!-- for fullname -->
                       <div class="form-group">
                         <label class = "font-weight-bold">fullname:</label>
@@ -139,4 +139,7 @@
        </div>
      </div>    
     <?php include('footer.php'); ?>
+    <script>
+      alert("<?php echo $errors['status']; ?>");
+    </script>
 </html>

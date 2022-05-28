@@ -63,7 +63,7 @@
       }
       
     if(array_filter($errors)) {
-      $errors['status'] =  "ERROR 505!! <br/>"; 
+      $errors['status'] =  "ERROR 509!"; 
     } else {
         
         $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
@@ -116,9 +116,8 @@
                     
                     <img class= "img-fluid rounded d-block mx-auto mt-0" style="width: 55px;" src="img/phonebooklogo.png" alt="no thumbnails">
                     <h4 class = "display-5 text-center lead text-danger font-weight-bold text-capitalize">add new contact..</h4>  
-                    <small class= "text-danger font-weight-bold"><?php echo $errors['status']; ?></small>
-                    <div class= "form-row form-group form-text mt-5">
 
+                    <div class= "form-row form-group form-text mt-5">
                         <div class="col-md-6">
 
                             <label class="">Firstname:</label>
@@ -164,4 +163,7 @@
         </div>            
     </div>
     <?php include('footer.php'); ?>
+    <script>
+     alert("<?php echo $errors['status']; ?>");
+    </script>
 </html>

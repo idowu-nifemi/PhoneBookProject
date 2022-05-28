@@ -67,7 +67,7 @@ if(isset($_POST['update'])){
      }
   
      if(array_filter($errors)) {
-       $errors['status'] =  "ERROR 505!! <br/>"; 
+       $errors['status'] =  "ERROR 509!"; 
     
      } else {
          
@@ -94,6 +94,7 @@ if(isset($_POST['update'])){
 
 <!DOCTYPE html>
 <html lang="en">
+
  <?php include('header.php');?>
  <?php include('sidebar.php');?>
  
@@ -101,15 +102,13 @@ if(isset($_POST['update'])){
         <!-- sidebar whether fixed,auto or responsive buh i will prefer a toggleable one -->
         <div class="container">
             <div class="row">  
-              <div class="col-md-3"></div>                        
-                  
-              <div class="col-md-6 ">
+            <div class="col-md-3"> </div>
+              <div class="col-md-6">
                 <form class = "small text-muted round m-5 p-3 font-weight-bold" method="POST">
                     
                     <img class=" img-fluid rounded d-block mx-auto mt-0" style="width: 55px;" src="img/phonebooklogo.png" alt="no thumbnails">
                     <h4 class = " display-5 text-center lead text-danger font-weight-bold text-capitalize">Edit contact..</h4>  
-                    <small class ="text-danger font-weight-bold"><?php echo $errors['status']; ?></small>
-
+                  
                     <div class="form-row form-group form-text mt-5">
                         <div class="col-md-6">
                             <label class="">Firstname:</label>
@@ -147,10 +146,16 @@ if(isset($_POST['update'])){
 
                 </form>     
               </div>
-              <div class="col-md-3"></div> 
+
+              <div class="col-md-3">
+                  <img class=" img-fluid m-5" style="width: 305px; height: 300px;" src="img/pic2.png" alt="no thumbnails">
+              </div>
             </div>
         </div>            
     </div>
     
     <?php include('footer.php'); ?>
+    <script>
+      alert("<?php echo $errors['status']; ?>");
+    </script>
 </html>

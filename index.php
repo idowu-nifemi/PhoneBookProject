@@ -7,7 +7,7 @@
   
   $email = $password = '';
 
-  $errors = array( 'email' => ''  ,'password' => '', 'message1' => '' , 'message2' => '' ,'status' => '' );
+  $errors = array( 'email' => '' ,'password' => '', 'message1' => '' , 'message2' => '' ,'status' => '' );
 
   if(isset($_POST['login'])){
 
@@ -40,12 +40,10 @@
     } else {
       $errors['message1'] = "This email does not exist, check well.<br/>";
     }
-
         // echo var_dump($row_account);
         // echo $password;
-
       if(array_filter($errors)) {
-        $errors['status']  = "ERROR 505!! <br/>";
+        $errors['status']  = "ERROR 509!";
       } else {
         $_SESSION['userInSession'] = $row_account['id'];
         $_SESSION['fullname'] = $row_account['fullname'];
@@ -64,21 +62,17 @@
     <div class="back-overlay">
       <section class="container ">
           <div class="row ">
+             <div class="col-md-4"><img class=" img-fluid rounded m-4" style="width: 405px;" src="img/pic7.png" alt="no thumbnails"></div>
 
               <div class="col-md-4">
-                <h4 class=" display-3 text-center text-muted text-capitalize">WORK in progress...</h4>  
-                  <p class="font-weight-bold text-truncate ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente asperiores debitis nobis 
-                    voluptates exercitationem recusandae, doloribus quidem neque itaque explicabo, 
-                    dignissimos officia? Eum, id porro quasi error fugit ad reprehenderit.</p>
-              </div>
-
-              <div class="col-md-4"></div>
+                  <img class=" img-fluid rounded m-3" style="width: 206px;" src="img/pic8.png" alt="no thumbnails">
+                  <img class=" img-fluid rounded m-2" style="width: 205px; height: 130px;" src="img/pic2.png" alt="no thumbnails">
+            </div>
 
               <div class="col-md-4 p-4 bg-secondary my-3 rounded ">
                 <img class=" img-fluid rounded d-block mx-auto mt-0" style="width: 55px;" src="img/phonebooklogo.png" alt="no thumbnails">
                 <form class ="small text-white" method="POST">
 
-                  <small class ="text-danger font-weight-bold"><?php echo $errors['status']; ?></small>
                   <!-- for Email -->
                   <div class="form-group form-text">
                     <label class="font-weight-bold">Email:</label>
@@ -124,9 +118,11 @@
       </section>
     </div>
   <?php include('footer.php'); ?>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+ <script>
+   alert("<?php echo $errors['status']; ?>");
+ </script>
 
 </html>

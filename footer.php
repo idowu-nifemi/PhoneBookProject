@@ -1,11 +1,11 @@
  
-   <div class="jumbotron jumbotron-fluid bg-primary m-0"> 
+   <div class="jumbotron jumbotron-fluid bg-success m-0"> 
         <div class="row">
             <div class="col-md-3">
                 <img style="width: 90px;" class="img-fluid rounded float-left" src="img/phonebooklogo.png" alt="no thumbnail">
-                <div class="text-white font-weight-bold float-left">
-                        <h4> PcBOOK</h4>  
-                </div>
+                <div class="float-left text-white font-weight-bold">
+                   <a href="index.php" class="text-white">PcBOOK</a>
+                </div>  
             </div>
             <div class="col-md-3">
                 <h4 id ="about" class ="text-warning font-weight-bold">About</h4>
@@ -57,18 +57,19 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+
     <script>
         $(document).ready(function() {
-        $('#lol').DataTable();
+        $('#data_table').DataTable();
      });
     </script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       function togglemenu(){
         document.getElementById('sidebar').classList.toggle('active');
       }
-    </script>
+    </script> -->
 </body>
 

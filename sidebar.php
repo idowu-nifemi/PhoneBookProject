@@ -2,11 +2,11 @@
 <html>
   
     <div id="sidebar"  onclick ="togglemenu()">
-        <div class="toggle-btn">
+        <!-- <div class="toggle-btn">
                 <span></span>
                 <span></span>
                 <span></span>
-        </div>
+        </div> -->
         <ul>
           <a href="dashboard.php"><i class="fa fa-fw fa-envelope"></i> Dashboard</a>
           <a href="view_contact.php"><i class="fa fa-fw fa-user"></i>contacts</a>

@@ -7,7 +7,7 @@
   
   $email = $password = '';
 
-  $errors = array( 'email' => '' ,'password' => '', 'message1' => '' , 'message2' => '' ,'status' => '' );
+  $errors = array('email' => '' ,'password' => '' , 'message1' => '' , 'message2' => '' , 'status' => '');
 
   if(isset($_POST['login'])){
 
@@ -38,10 +38,9 @@
         $errors['message2'] = "Wrong password, try again <br/>";
       }
     } else {
-      $errors['message1'] = "This email does not exist, check well.<br/>";
+      $errors['message1'] = "This email does not exist,check well.<br/>";
     }
-        // echo var_dump($row_account);
-        // echo $password;
+      //echo var_dump($row_account);
       if(array_filter($errors)) {
         $errors['status']  = "ERROR 509!";
       } else {
@@ -66,20 +65,20 @@
 
               <div class="col-md-4">
                   <img class=" img-fluid rounded m-3" style="width: 206px;" src="img/pic8.png" alt="no thumbnails">
-                  <img class=" img-fluid rounded m-2" style="width: 205px; height: 130px;" src="img/pic2.png" alt="no thumbnails">
-            </div>
+                  <img class=" img-fluid rounded m-2" style="width: 205px; height: 140px;" src="img/pic2.png" alt="no thumbnails">
+              </div>
 
               <div class="col-md-4 p-4 bg-secondary my-3 rounded ">
                 <img class=" img-fluid rounded d-block mx-auto mt-0" style="width: 55px;" src="img/phonebooklogo.png" alt="no thumbnails">
-                <form class ="small text-white" method="POST">
 
+                <form class ="small text-white" method="POST">
                   <!-- for Email -->
                   <div class="form-group form-text">
                     <label class="font-weight-bold">Email:</label>
                     <input class="form-control" type="text" id="email" name="email" placeholder="email address" value="<?php echo htmlspecialchars($_POST['email']); ?>">
                     <div class="text-danger"><small><?php echo $errors['email']; ?></small></div>
                     <small class = "text-danger font-weight-bold"><?php echo $errors['message1']; ?></small>
-                    <small id="emailHelp" class="form-text font-weight-bold text-white">We'll never share your email with anyone else.</small>
+                    <small id="emailHelp" class="form-text font-weight-bold font-italic text-white">We'll never share your email with anyone else.</small>
                   </div>
 
                   <!-- for password -->
@@ -100,17 +99,16 @@
                     </div>
                   </div>
 
-                  <div class="small text-center">
+                  <div class="small font-italic text-center">
                     <a class="text-white" href="#">forgot password?</a>
                   </div>
 
-                  
                   <!-- a div class for login button -->
                   <div class="text-center">
                     <input class="rounded btn-sm  btn-danger" type="submit" name="login" value="sign in">
                   </div>
 
-                  <div class="center small text-center">
+                  <div class="center small font-italic text-center">
                     <p class="">You don't have an account ? <a href="signup.php" class="text-danger">sign up</a></p>
                   </div>
               </form>
@@ -124,5 +122,4 @@
  <script>
    alert("<?php echo $errors['status']; ?>");
  </script>
-
 </html>

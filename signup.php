@@ -2,7 +2,7 @@
   
   require_once('config/db_connect.php');
 
-  $fullname = $email =$telephone=$password ='';
+  $fullname = $email = $telephone = $password ='';
 
   $errors = array('fullname' => '', 'email' => '' ,'telephone'=> '', 'password' => '' ,'status' => '', 'message' => '');
 
@@ -42,18 +42,16 @@
       $password = $_POST['password'];
     }
 
-    // getting the email from the database
+    //getting the email from the database
     $checkAccount = $conn->query("SELECT * FROM tb_accounts WHERE email='$email' ");
     
     //fetch the resulting rows as an array.
     $row_account = $checkAccount->fetch_assoc();
 
-    
-
     if(array_filter($errors)) {
       $errors['status'] =  "ERROR 509!";
     }else {
-        //checking if the email has been used before   
+        //checking if the email has not been used before   
         if ($row_account['email'] == $email) {
           $errors['message'] = "Email exist, try using another Email <br/>";
         }else {
@@ -68,8 +66,7 @@
           $sql = "INSERT INTO tb_accounts (fullname,email,telephone,password)VALUES('$fullname','$email','$telephone','$encPassword')";
 
           if($conn->query($sql) === TRUE) { 
-            //sucess
-            header('location:index.php');  
+             header('location:index.php');  
           }else {
              echo 'query error'.mysqli_error($conn);
            } 
@@ -85,14 +82,14 @@
      <?php include('header.php');?>
      
      <div class="back-overlay">
-       <div class="container">
+       <section class="container">
           <div class="row">
-            <div class="col-md-4"></div>
+            <div class="col-md-4 "></div>
 
-            <div class="col-md-4 p-4 m-5 bg-danger rounded">
+            <div class="col-md-4 col-sm-3 p-4 m-5 bg-danger rounded">
                 <img class="img-fluid rounded d-block mx-auto" style="width: 55px;" src="img/phonebooklogo.png" alt="no thumbnails">
-                <form class="small text-white" method="POST">
 
+                <form class="small text-white" method="POST">
                       <!-- for fullname -->
                       <div class="form-group">
                         <label class = "font-weight-bold">fullname:</label>
@@ -106,7 +103,7 @@
                           <input class="form-control" type="text" name="email" placeholder="Email address"  value="<?php echo htmlspecialchars($email); ?>">
                           <div class="text-white font-weight-bold"><small><?php echo $errors['email']; ?></small></div>
                           <div class="text-white font-weight-bold"><small><?php echo $errors['message']; ?></small></div>
-                          <small id="emailHelp" class="form-text font-weight-bold text-white">We'll never share your email with anyone else.</small>
+                          <small id="emailHelp" class="form-text font-weight-bold font-italic text-white">We'll never share your email with anyone else.</small>
                       </div>
 
                       <!-- for telephone -->
@@ -128,7 +125,7 @@
                         <input class="btn-sm  btn-primary rounded" type="submit" name="sign_up" value="sign up">
                       </div>
 
-                      <div class="center small text-center">
+                      <div class="center small font-italic text-center">
                         <p class="">Already have an account ? <a href="index.php" class="text-white">sign in</a></p>
                       </div>
                 </form>
@@ -136,8 +133,9 @@
 
             <div class="col-md-4"></div>
           </div>
-       </div>
-     </div>    
+       </section>
+     </div>   
+
     <?php include('footer.php'); ?>
     <script>
       alert("<?php echo $errors['status']; ?>");

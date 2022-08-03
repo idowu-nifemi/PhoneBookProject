@@ -37,49 +37,49 @@
 
 <!-- i will be adding the search form for the contacts -->
 <!DOCTYPE html>
-   <html lang="en">
+<html lang="en">
 
-    <?php include('header.php');?>
-    <?php include('sidebar.php');?>
+ <?php include('header.php');?>
+ <?php include('sidebar.php');?>
 
    <div class="back-overlay">
-    <div class="container">
+   <div class="container">
       <div class="text-center border square rounded w-75 p-5">
-       <div style="overflow-x:auto;">
-        
-            <table class ="table table-striped table-bordered table-hover border m-3 p-5" id="data_table" >
-                  <thead class="thead-dark">
-                     <tr class ="text-muted font-weight-bold p-5 m-5">
-                        <h3 class=" text-warning lead font-weight-bold text-capitalize text-center text-capitalize">My contacts.</h3>
-                        <img class=" img-fluid rounded d-block mx-auto mt-0" style="width: 55px;" src="img/phonebooklogo.png" alt="no thumbnails">
-                       
-                        <th>Firstname</th>
-                        <th>lastname</th>
-                        <th>Telephone</th>
-                        <th>Email</th>
-                        <th colspan="2">Action</th>
-                     </tr>
-                  </thead>
+      <div style="overflow-x:auto;">
+         
+         <table class ="table table-striped table-bordered table-hover border m-3 p-5" id="data_table" >
+               <thead class="thead-dark">
+                  <tr class ="text-muted font-weight-bold p-5 m-5">
+                     <h3 class=" text-muted lead font-weight-bold text-capitalize text-center text-capitalize">My contacts</h3>
+                     <img class=" img-fluid rounded d-block mx-auto mt-0" style="width: 55px;" src="img/phonebooklogo.png" alt="no thumbnails">
                   
-                  <?php foreach($tb_contacts as $tb_contact) {?>
-                  <tr class ="">
-                     <td><?php echo $tb_contact['firstname']; ?></td>
-                     <td><?php echo $tb_contact['lastname']; ?></td>
-                     <td><?php echo $tb_contact['telephone']; ?></td>
-                     <td><?php echo $tb_contact['email']; ?></td>
-                     <td>
-                        <a href="editContact.php?edit=<?php echo $tb_contact['id']; ?>" class="btn btn-sm btn-primary text-warning">Edit</a>
-                     </td>
-                     <td>
-                        <a href="view_contact.php?del=<?php echo $tb_contact['id']; ?>" class="btn btn-sm btn-danger text-white">Delete</a>
-                     </td>
+                     <th>Firstname</th>
+                     <th>lastname</th>
+                     <th>Telephone</th>
+                     <th>Email</th>
+                     <th colspan="2">Action</th>
                   </tr>
-                  <?php } ?>
-               </table>
+               </thead>
+               
+               <?php foreach($tb_contacts as $tb_contact) {?>
+               <tr class ="">
+                  <td><?php echo $tb_contact['firstname']; ?></td>
+                  <td><?php echo $tb_contact['lastname']; ?></td>
+                  <td><?php echo $tb_contact['telephone']; ?></td>
+                  <td><?php echo $tb_contact['email']; ?></td>
+                  <td>
+                     <a href="editContact.php?edit=<?php echo $tb_contact['id']; ?>" class="btn btn-sm btn-primary text-warning">Edit</a>
+                  </td>
+                  <td>
+                     <a href="view_contact.php?del=<?php echo $tb_contact['id']; ?>" class="btn btn-sm btn-danger text-white">Delete</a>
+                  </td>
+               </tr>
+               <?php } ?>
+            </table>
       </div>   
       </div>
-    </div> 
+   </div> 
    </div>
-
-    <?php include('footer.php'); ?>
-   </html>  
+                                                                                                
+ <?php include('footer.php'); ?>
+</html>  

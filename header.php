@@ -19,7 +19,7 @@
             <div class="navbar-brand">
                   <img class="img-fluid rounded float-left" style="width: 95px;" src="img/phonebooklogo.png" alt="no thumbnails">
                   <div class="float-left text-white font-weight-bold">
-                      <a href="index.php" class="text-white">PcBOOK</a>
+                      <a href="#about" class="text-white">PcBOOK</a>
                   </div>  
             </div>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNav">
@@ -60,7 +60,7 @@
                     </li>
                   <?php } else {?>
                     <li class="nav-item">
-                      <a href="signout.php" class="nav-link active"><?php echo ucwords($fullname)?><i class="fas fa-user"></i> | Sign Out<i class="fas fa-trash"></i></a>
+                      <a href="signout.php" class="nav-link active">welcome! <?php echo ucwords($fullname)?><i class="fas fa-user"></i> | Sign Out<i class="fas fa-trash"></i></a>
                     </li>
                   <?php } ?>
 

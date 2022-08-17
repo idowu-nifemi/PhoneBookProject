@@ -5,7 +5,7 @@
   if(session_status() != PHP_SESSION_ACTIVE);
   session_start();
 
-  //conditional
+  //conditional session destroy
   $userInSession = $_SESSION['userInSession'];
   $fullname = $_SESSION['fullname'];
 
@@ -15,19 +15,17 @@
 
   $contactId = $_REQUEST['edit'];
 
-  //write query for all tb_contacts to get the values of the id im editing
+  //write query for all tb_contacts to get the values of the id i'm editing..
   $sql = $conn->query("SELECT * FROM tb_contacts WHERE id = $contactId");
       
   //fetch the resulting rows as an array.
   $tb_contacts = $sql->fetch_assoc();
 
- 
- 
-if(isset($_POST['update'])){
+  if(isset($_POST['update'])){
 
-  $firstname = $lastname = $telephone = $email ='';
+   $firstname = $lastname = $telephone = $email ='';
   
-  $errors = array('firstname' => '', 'lastname' => '' ,'telephone'=> '', 'email' => '','status' =>'');
+   $errors = array('firstname' => '','lastname' => '' ,'telephone'=> '', 'email' => '','status' =>'');
   
      //checking firstname..
      if(empty($_POST['firstname'])){
@@ -39,7 +37,7 @@ if(isset($_POST['update'])){
          }
        }
   
-     //checking lastname.
+     //checking lastname..
      if(empty($_POST['lastname'])){
          $errors['lastname'] = "lastname is required <br/>";
      } else {
@@ -67,7 +65,7 @@ if(isset($_POST['update'])){
      }
   
      if(array_filter($errors)) {
-       $errors['status'] =  "ERROR 509!"; 
+       $errors['status'] =  "Error 509!"; 
     
      } else {
          
@@ -104,7 +102,7 @@ if(isset($_POST['update'])){
             <div class="row">  
             <div class="col-md-3"> </div>
               <div class="col-md-6">
-                <form class = "small text-muted round m-5 p-3 font-weight-bold" method="POST">
+                <form class = "small text-muted round m-5 p-3 font-weight-bold ml-5" method="POST">
                     
                     <img class=" img-fluid rounded d-block mx-auto mt-0" style="width: 55px;" src="img/phonebooklogo.png" alt="no thumbnails">
                     <h4 class = " display-5 text-center lead text-danger font-weight-bold text-capitalize">Edit contact..</h4>  
@@ -147,9 +145,9 @@ if(isset($_POST['update'])){
                 </form>     
               </div>
 
-              <div class="col-md-3">
+              <!-- <div class="col-md-3">
                   <img class=" img-fluid m-5" style="width: 305px; height: 300px;" src="img/pic2.png" alt="no thumbnails">
-              </div>
+              </div> -->
             </div>
         </div>            
     </div>

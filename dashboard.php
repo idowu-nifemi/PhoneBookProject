@@ -5,7 +5,7 @@
   if(session_status() != PHP_SESSION_ACTIVE);
   session_start();
 
-    //conditional
+    //conditional session destroy
     $userInSession = $_SESSION['userInSession'];
     $fullname = $_SESSION['fullname'];
 
@@ -63,7 +63,7 @@
       }
       
     if(array_filter($errors)) {
-      $errors['status'] =  "ERROR 509!"; 
+      $errors['status'] = "Error 509!"; 
     } else {
         
         $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
@@ -71,7 +71,7 @@
         $telephone = mysqli_real_escape_string($conn, $_POST['telephone']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
                     
-        // create sql:
+        //create sql:
         $insert_account = "INSERT INTO tb_contacts (firstname, lastname, telephone, email,account_id) VALUES ('$firstname', '$lastname', '$telephone', '$email','$userInSession')";
 
         if($conn->query($insert_account) === TRUE) {   
@@ -97,21 +97,21 @@
         <section class="container">
             <div class="row">      
 
-              <div class="col-md-6 mt-5 ">
-                <div class="card rounded round2 m-5 w-50">
+              <div class="col-xs-12 col-sm-12 col-md-6   mt-5 ">
+                <div class="card rounded round2 m-5 ml-5 w-50">
                   <img class=" img-fluid rounded d-block mx-auto mt-0" style="width: 55px;" src="img/phonebooklogo.png" alt="no thumbnails">
                     <div class="card-body  ">
                        <div class = "card-title text-center text-primary font-weight-bold text-capitalize">no of contacts saved..</div>     
                        <h3 class = "card-text text-center text-muted font-weight-bold"> <?php echo sizeof($tb_contacts);?></h3> 
                     </div>
                         
-                    <div class="text-center m-4 p-2">                                    
-                        <a class = "btn btn-primary text-warning" href="view_contact.php">view contacts</a>
+                    <div class="text-center justify-content-center m-4 p-2">                                    
+                        <a class = "btn btn-primary text-warning" href="view_contact.php">contacts</a>
                     </div>
                 </div>
               </div>
     
-              <div class="col-md-6 ">
+              <div class="col-xs-12 col-sm-12 col-md-6  ">
                 <form class = "round rounded small text-muted font-weight-bold m-5 p-3" method="POST">
                     
                     <img class= "img-fluid rounded d-block mx-auto mt-0" style="width: 55px;" src="img/phonebooklogo.png" alt="no thumbnails">

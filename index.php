@@ -42,7 +42,7 @@
     }
       //echo var_dump($row_account);
       if(array_filter($errors)) {
-        $errors['status']  = "ERROR 509!";
+        $errors['status']  = "Error 509!";
       } else {
         $_SESSION['userInSession'] = $row_account['id'];
         $_SESSION['fullname'] = $row_account['fullname'];

@@ -49,7 +49,7 @@
     $row_account = $checkAccount->fetch_assoc();
 
     if(array_filter($errors)) {
-      $errors['status'] =  "ERROR 509!";
+      $errors['status'] =  "Error 509!";
     }else {
         //checking if the email has not been used before   
         if ($row_account['email'] == $email) {

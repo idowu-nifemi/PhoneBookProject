@@ -10,8 +10,8 @@
 
             <div class="col-md-3">
                 <h4 id ="about" class ="text-warning font-weight-bold">About</h4>
-                <p class="text-warning small">This project is called Phonebook where users can sign up or create account and login to 
-                    create ,view , edit and delete contact and this is actually unique to each users...do check it out and let me know what you think.
+                <p class="text-warning small">This project is a Phonebook project called pcBook where users can sign up or create account and login to 
+                    create ,view , edit and delete contact and this is actually unique to each users...do sign up and check it out,let me know what you think.
                  </p>
             </div>
                     
@@ -58,12 +58,19 @@
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
 
+     <!-- Start datatable js -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+
     
-    <!-- <script>
+    <script>
         $(document).ready(function() {
-        $('#data_table').DataTable();
-     });
-    </script> -->
+            $('#dataTable2').DataTable();
+        } );
+    </script>
     <!-- <script type="text/javascript">
       function togglemenu(){
         document.getElementById('sidebar').classList.toggle('active');

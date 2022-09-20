@@ -1,5 +1,6 @@
-<?php 
-  require_once('config/db_connect.php');  
+<?php require_once('config/db_connect.php');  ?>
+
+<?php
 
    //initialize the session
    if(session_status() != PHP_SESSION_ACTIVE);
@@ -34,10 +35,6 @@
 
 ?>
 
-<!-- i will be adding the search form for the contacts -->
-<!DOCTYPE html>
-<html lang="en">
-
  <?php include('header.php');?>
  <?php include('sidebar.php');?>
 
@@ -51,7 +48,7 @@
                <div class="text-center rounded w-75 mt-5 p-5">
                 <div style="overflow-x:auto;">
                   <div class=" datatable-primary">
-                   <table class ="table table-striped table-bordered table-hover datatable m-5"  id="dataTable2">
+                   <table class ="table table-striped table-bordered table-hover datatable m-5"  id="phonebook">
                       <thead class="thead-dark text-capitalize">
                         <tr class ="text-muted text-center font-weight-bold p-5 m-5">
                            <h3 class=" text-muted lead font-weight-bold text-center">My contacts</h3>
@@ -96,4 +93,3 @@
    </div>
                                                                                                 
  <?php include('footer.php'); ?>
-</html>  

@@ -1,6 +1,7 @@
+
+<?php require_once('config/db_connect.php');?>
+
 <?php
-  
-  require_once('config/db_connect.php');
 
   $fullname = $email = $telephone = $password ='';
 
@@ -74,12 +75,10 @@
         
      }
   }
+
 ?>
 
-<!DOCTYPE html>
-  <html lang="en">
-
-     <?php include('header.php');?>
+<?php include('header.php');?>
      
      <div class="back-overlay">
        <section class="container">
@@ -136,8 +135,7 @@
        </section>
      </div>   
 
-    <?php include('footer.php'); ?>
-    <script>
-      alert("<?php echo $errors['status']; ?>");
-    </script>
-</html>
+<?php include('footer.php'); ?>
+<script>
+  alert("<?php echo $errors['status']; ?>");
+</script>

@@ -1,5 +1,7 @@
-<?php 
- require_once('config/db_connect.php');  
+
+<?php require_once('config/db_connect.php');?>
+
+<?php
 
   //initialize the session
   if(session_status() != PHP_SESSION_ACTIVE);
@@ -90,9 +92,6 @@
 
 ?>  
 
-<!DOCTYPE html>
-<html lang="en">
-
  <?php include('header.php');?>
  <?php include('sidebar.php');?>
  
@@ -152,8 +151,7 @@
         </div>            
     </div>
     
-    <?php include('footer.php'); ?>
-    <script>
-      alert("<?php echo $errors['status']; ?>");
-    </script>
-</html>
+<?php include('footer.php'); ?>
+<script>
+  alert("<?php echo $errors['status']; ?>");
+</script>
